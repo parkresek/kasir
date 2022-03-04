@@ -25,15 +25,15 @@
                                     <div class="card-body">
                                         <form method="POST">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" name="User" type="text" placeholder="User Name" />
+                                                <input class="form-control" id="inputEmail" name="user_name" type="text" placeholder="User Name" required />
                                                 <label for="inputUserName">User Name</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" name="password" type="password" placeholder="Password" />
+                                                <input class="form-control" id="inputPassword" name="password" type="password" placeholder="Password" required />
                                                 <label for="inputPassword">Password</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="btn btn-dark" href="index.html">Login</a>
+                                                <button type="submit" name="login" class="btn btn-dark">Login</button>
                                             </div>
                                         </form>
                                     </div>
