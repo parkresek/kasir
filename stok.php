@@ -1,3 +1,8 @@
+<?php 
+require 'function.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,8 +66,8 @@
 
                         <div class="col-xl-3 col-md-6">
 
-                            <div class="card bg-danger text-white mb-4">
-                                <div class="card-body">Jumlah Pesanan : </div>
+                            <div class="card bg-primary text-white mb-4">
+                                <div class="card-body">Pesanan : </div>
                             </div>
                         </div>
                     </div>
@@ -81,24 +86,40 @@
                         <table id="datatablesSimple">
                             <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
+                                    <th>No</th>
+                                    <th>Nama Produk</th>
+                                    <th>Deskripsi</th>
+                                    <th>Stok</th>
+                                    <th>Harga</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
+
                             <tbody>
+
+                            <?php 
+                            $get = mysqli_query($k,"select * from produk");
+                            $i = 1;
+
+                            while($p=mysqli_fetch_array($get)){
+                                $namaproduk = $p['nama_produk'];
+                                $deskripsi = $p['deskripsi'];
+                                $stok = $p['stok'];
+                                $harga = $p['harga'];
+
+                            ?>
                                 <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
+                                    <td><?= $i++; ?></td>
+                                    <td><?= $namaproduk; ?></td>
+                                    <td><?= $deskripsi; ?></td>
+                                    <td><?= $stok; ?></td>
+                                    <td><?= $harga; ?></td>
                                     <td>$320,800</td>
                                 </tr>
                             </tbody>
+                        <?php 
+                        };
+                        ?>
                         </table>
                     </div>
                 </div>
@@ -140,17 +161,21 @@
                 <h4 class="modal-title">Tambah Barang Baru</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
+            <form method=post>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <input type="text" name="nama_produk" class="form-control" placeholder="Nama Produk">
+                    <input type="text" name="deskripsi" class="form-control mt-2" placeholder="Deskripsi">
+                    <input type="num" name="stok" class="form-control mt-2" placeholder="Stok">
+                    <input type="num" name="harga" class="form-control mt-2" placeholder="Harga Produk">
+                </div>
 
-            <!-- Modal body -->
-            <div class="modal-body">
-                Modal body..
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" name="tambahbarang">Tambah</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

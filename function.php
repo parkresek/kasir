@@ -28,4 +28,22 @@ if (isset($_POST['login'])){
 }
 
 
+if(isset($_POST['tambahbarang'])){
+    $namaproduk = $_POST['nama_produk'];
+    $deskripsi = $_POST['deskripsi'];
+    $stok = $_POST['stok'];
+    $harga = $_POST['harga'];
+
+    $insert = mysqli_query($k,"insert into produk (nama_produk, deskripsi, harga, stok) values ('$namaproduk', '$deskripsi', '$harga', '$stok')");
+    if($insert){
+        header('location:stok.php');
+    }
+    else{
+        echo'
+        <script>alert ("Gagal Menyimpan Produk")
+        window.location.href="stok.php"
+        </script>';
+    }
+}
+
 ?>
