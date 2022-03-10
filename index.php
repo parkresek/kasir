@@ -14,6 +14,7 @@ require 'function.php';
     <title>Data Pesanan</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 
@@ -68,6 +69,12 @@ require 'function.php';
                             </div>
                         </div>
                     </div>
+
+                    <!-- Button to Open the Modal -->
+                    <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#myModal">
+                        Tambah Barang Baru
+                    </button>
+
 
                     <div class="card mb-4">
                         <div class="card-header">
@@ -128,6 +135,38 @@ require 'function.php';
     <script src="assets/demo/chart-bar-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
     <script src="js/datatables-simple-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Tambah Barang Baru</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form method=post>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <input type="text" name="nama_produk" class="form-control" placeholder="Nama Produk">
+                    <input type="text" name="deskripsi" class="form-control mt-2" placeholder="Deskripsi">
+                    <input type="num" name="stok" class="form-control mt-2" placeholder="Stok">
+                    <input type="num" name="harga" class="form-control mt-2" placeholder="Harga Produk">
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" name="tambahbarang">Tambah</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 </html>
