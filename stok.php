@@ -44,6 +44,10 @@ require 'function.php';
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Barang Masuk
                         </a>
+                        <a class="nav-link" href="pelanggan.php">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Kelola Pelanggan
+                        </a>
                         <a class="nav-link" href="logout.php">
                             Log out
                         </a>
