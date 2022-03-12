@@ -46,4 +46,22 @@ if(isset($_POST['tambahbarang'])){
     }
 }
 
+
+if(isset($_POST['tambahpelanggan'])){
+    $namapelanggan = $_POST['namapelanggan'];
+    $notelp = $_POST['notelp'];
+    $alamat = $_POST['alamat'];
+
+    $insert = mysqli_query($k,"insert into pelanggan (namapelanggan, notelp, alamat) values ('$namapelanggan', '$notelp', '$alamat')");
+    if($insert){
+        header('location:pelanggan.php');
+    }
+    else{
+        echo'
+        <script>alert ("Gagal Menyimpan data")
+        window.location.href="pelanggan.php"
+        </script>';
+    }
+}
+
 ?>
