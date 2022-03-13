@@ -64,4 +64,21 @@ if(isset($_POST['tambahpelanggan'])){
     }
 }
 
+
+if(isset($_POST['tambahpesanan'])){
+    $idpelanggan = $_POST['id_pelanggan'];
+    
+
+    $insert = mysqli_query($k,"insert into pesan (id_pelanggan) values ('$idpelanggan')");
+    if($insert){
+        header('location:index.php');
+    }
+    else{
+        echo'
+        <script>alert ("Gagal Menyimpan data")
+        window.location.href="index.php"
+        </script>';
+    }
+}
+
 ?>

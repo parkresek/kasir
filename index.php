@@ -99,7 +99,7 @@ require 'function.php';
                                 $get = mysqli_query($k, "select * from pesan");
 
                                 while ($p = mysqli_fetch_array($get)) {
-                                    $idpesanan = $p['id_pesan'];
+                                    $idpesan = $p['id_pesan'];
                                     $tanggal = $p['tanggal'];
                                     
                                 ?>
@@ -157,15 +157,30 @@ require 'function.php';
             <form method=post>
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <input type="text" name="nama_produk" class="form-control" placeholder="Nama Produk">
-                    <input type="text" name="deskripsi" class="form-control mt-2" placeholder="Deskripsi">
-                    <input type="num" name="stok" class="form-control mt-2" placeholder="Stok">
-                    <input type="num" name="harga" class="form-control mt-2" placeholder="Harga Produk">
+                    Pilih Pelanggan
+                    <select name="id_pelanggan" class="form-control">
+
+                    <?php 
+                    $getpelanggan = mysqli_query($k, "select * from pelanggan");
+                    while($pl=mysqli_fetch_array($getpelanggan)){
+                        $namapelanggan = $pl['namapelanggan'];
+                        $notelp = $pl['notelp'];
+                        $alamat = $pl['alamat'];
+
+                    
+                    ?>
+
+                    <option value="<?=$id_pelanggan;?>"><?= $namapelanggan; ?> - <?= $alamat; ?></option>
+                    <?php 
+                    }
+                    ?>
+
+                    </select>
                 </div>
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success" name="tambahbarang">Tambah</button>
+                    <button type="submit" class="btn btn-success" name="tambahpesanan">Tambah</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </form>
