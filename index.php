@@ -91,6 +91,7 @@ require 'function.php';
                                     <tr>
                                         <th>Id Pesan</th>
                                         <th>Tanggal</th>
+                                        <th>Nama Pelanggan</th>
                                         <th>Jumlah</th>
                                         <th>aksi</th>
                                     </tr>
@@ -101,11 +102,13 @@ require 'function.php';
                                 while ($p = mysqli_fetch_array($get)) {
                                     $idpesan = $p['id_pesan'];
                                     $tanggal = $p['tanggal'];
+                                    $idpelanggan = $p['id_pelanggan'];
                                     
                                 ?>
                                     <tr>
                                         <td><?= $idpesan; ?></td>
                                         <td><?= $tanggal; ?></td>
+                                        <td><?= $idpelanggan; ?></td>
                                         <td>Jumlah</td>
                                         <td>view delate</td>
                                     </tr>
