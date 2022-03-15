@@ -110,7 +110,7 @@ require 'function.php';
                                         <td><?= $tanggal; ?></td>
                                         <td><?= $idpelanggan; ?></td>
                                         <td>Jumlah</td>
-                                        <td><a href="view.php">view</a> delate</td>
+                                        <td>view delate</td>
                                     </tr>
                                     </tbody>
                                 <?php
