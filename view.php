@@ -1,6 +1,14 @@
 <?php
 require 'function.php';
-?>
+$idp = $_GET['idp'];
+
+if (isset($_GET['idp'])){
+    $idp = $_GET['idp'];
+}
+else{
+    header('location:index.php');
+}
+?>      
 
 <!DOCTYPE html>
 <html lang="en">
@@ -61,18 +69,10 @@ require 'function.php';
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Data Pesanan</h1>
+                    <h1 class="mt-4">Data Pesanan : <?= $idp; ?></h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">Welcome, Admin</li>
                     </ol>
-                    <div class="row">
-
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-danger text-white mb-4">
-                                <div class="card-body">pesanan :</div>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Button to Open the Modal -->
                     <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#myModal">
