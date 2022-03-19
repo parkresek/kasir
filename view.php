@@ -76,7 +76,7 @@ else{
 
                     <!-- Button to Open the Modal -->
                     <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#myModal">
-                        Tambah Barang Baru
+                        Tambah Barang
                     </button>
 
 
@@ -154,26 +154,26 @@ else{
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Tambah Barang Baru</h4>
+                <h4 class="modal-title">Tambah Barang</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <form method=post>
                 <!-- Modal body -->
                 <div class="modal-body">
-                    Pilih Pelanggan
+                    Pilih Barang
                     <select name="id_pelanggan" class="form-control">
 
                     <?php 
-                    $getpelanggan = mysqli_query($k, "select * from pelanggan");
-                    while($pl=mysqli_fetch_array($getpelanggan)){
-                        $namapelanggan = $pl['namapelanggan'];
-                        $notelp = $pl['notelp'];
-                        $alamat = $pl['alamat'];
+                    $getproduk = mysqli_query($k, "select * from produk");
+                    while($pl=mysqli_fetch_array($getproduk)){
+                        $namaproduk = $pl['nama_produk'];
+                        $deskripsi = $pl['deskripsi'];
+                        $id_produk = $pl['id_produk'];
 
                     
                     ?>
 
-                    <option value="<?=$id_pelanggan;?>"><?= $namapelanggan; ?> - <?= $alamat; ?></option>
+                    <option value="<?=$id_produk;?>"><?= $namaproduk; ?> - <?= $deskripsi; ?></option>
                     <?php 
                     }
                     ?>
