@@ -81,4 +81,23 @@ if(isset($_POST['tambahpesanan'])){
     }
 }
 
+
+if(isset($_POST['addproduk'])){
+    $idproduk = $_POST['id_produk'];
+    $idp = $_POST['idp'];
+    $jumlah = $_POST['jumlah'];
+    
+
+    $insert = mysqli_query($k,"insert into detile_pesanan (id_pesan, id_produk, jumlah) values ('$idproduk','$idp','$jumlah')");
+    if($insert){
+        header('location:view.php?idp='.$idp);
+    }
+    else{
+        echo'
+        <script>alert ("Gagal Menyimpan data")
+        window.location.href="view.php?idp="'.$idp.'
+        </script>';
+    }
+}
+
 ?>

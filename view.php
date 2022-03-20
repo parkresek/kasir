@@ -161,7 +161,7 @@ else{
                 <!-- Modal body -->
                 <div class="modal-body">
                     Pilih Barang
-                    <select name="id_pelanggan" class="form-control">
+                    <select name="id_produk " class="form-control">
 
                     <?php 
                     $getproduk = mysqli_query($k, "select * from produk");
@@ -179,11 +179,14 @@ else{
                     ?>
 
                     </select>
+
+                    <input type="number" name="qty" class="form-control mt-4" placeholder="jumlah">
+                    <input type="hidden" name="idp" value="<?=$idp;?>">
                 </div>
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success" name="tambahpesanan">Tambah</button>
+                    <button type="submit" class="btn btn-success" name="addproduk">Tambah</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </form>
