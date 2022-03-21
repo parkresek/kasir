@@ -89,10 +89,11 @@ else{
                             <table id="datatablesSimple">
                                 <thead>
                                     <tr>
-                                        <th>Id Pesan</th>
-                                        <th>Tanggal</th>
-                                        <th>Nama Pelanggan</th>
+                                        <th>No</th>
+                                        <th>Nama Produk</th>
+                                        <th>Harga Satuan</th>
                                         <th>Jumlah</th>
+                                        <th>Sub-Total</th>
                                         <th>aksi</th>
                                     </tr>
                                 </thead>
