@@ -86,7 +86,7 @@ else{
                             DataTable Example
                         </div>
                         <div class="card-body">
-                            <table id="datatablesSimple">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -98,19 +98,22 @@ else{
                                     </tr>
                                 </thead>
                                 <?php
-                                $get = mysqli_query($k, "select * from pesan");
+                                $get = mysqli_query($k, "select * from detile_pesanan p, produk pr where p.id_produk=pr.id_produk");
+                                $i= 1;
 
                                 while ($p = mysqli_fetch_array($get)) {
-                                    $idpesan = $p['id_pesan'];
-                                    $tanggal = $p['tanggal'];
-                                    $idpelanggan = $p['id_pelanggan'];
+                                    $qty = $p['qty'];
+                                    $harga = $p['harga'];
+                                    $namaproduk = $p['nama_produk'];
+                                    $subtotal = $qty*$harga;
                                     
                                 ?>
                                     <tr>
-                                        <td><?= $idpesan; ?></td>
-                                        <td><?= $tanggal; ?></td>
-                                        <td><?= $idpelanggan; ?></td>
-                                        <td>Jumlah</td>
+                                        <td><?= $i++; ?></td>
+                                        <td><?= $namaproduk; ?></td>
+                                        <td><?= $harga; ?></td>
+                                        <td><?= $qty; ?></td>
+                                        <td><?= $subtotal; ?></td>
                                         <td>view delate</td>
                                     </tr>
                                     </tbody>
